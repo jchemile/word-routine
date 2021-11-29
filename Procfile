@@ -1,1 +1,1 @@
-web gunicorn dairy:manager.py runserver 0.0.0.0:$PORT
+web: gunicorn dairy/manage.py runserver 0.0.0.0:$PORT
