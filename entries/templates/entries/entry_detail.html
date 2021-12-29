@@ -1,14 +1,33 @@
 {% extends "entries/base.html" %}
 
 {% block content %}
-    <article>
-        <h2>{{ entry.date_created|date:'Y-m-d H:i' }}</h2>
-        <h3>{{ entry.title }}</h3>
-        <p>{{ entry.content }}</p>
-    </article>
+<div class="circle-container">
+    <div class="circle">
+        <button id="close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="open">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</div>
 
-    <p>
-        <a href="{% url 'entry-update' entry.id %}">✍️ Edit</a>
-        <a href="{% url 'entry-delete' entry.id %}">⛔ Delete</a>
-    </p>
+    <div class="content">
+        <h1>{{ entry.title }}</h1>
+        <small>{{ entry.date_created|date:'Y-m-d' }}</small>
+        <p>{{ entry.content }}</p>
+        
+        <h3> Image </h3>
+        <img src = "https://picsum.photos/1000/1000"/>
+        
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="{% url 'entry-update' entry.id %}">✍️ Edit</a></li>
+            <li><a href="{% url 'entry-delete' entry.id %}">⛔ Delete</a></li>
+        </ul>
+    </nav>
+    <script src="script.js"></script>
 {% endblock %}
