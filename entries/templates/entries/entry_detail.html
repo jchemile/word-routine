@@ -12,7 +12,7 @@
     </div>
 </div>
 
-    <div class="content">
+<div class="content">
         <h1>{{ entry.title }}</h1>
         <small>{{ entry.date_created|date:'Y-m-d' }}</small>
         <p>{{ entry.content }}</p>
@@ -20,14 +20,13 @@
         <h3> Image </h3>
         <img src = "https://picsum.photos/1000/1000"/>
         
-    </div>
+</div>
 
-    <nav>
+<nav>
         <ul>
             <li><a href="/">🏠 Home</a></li>
             <li><a href="{% url 'entry-update' entry.id %}">✍️ Edit</a></li>
             <li><a href="{% url 'entry-delete' entry.id %}">⛔ Delete</a></li>
         </ul>
-    </nav>
-    <script src="script.js"></script>
+</nav>
 {% endblock %}
